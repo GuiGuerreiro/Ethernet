@@ -35,7 +35,7 @@ int EthernetClass::begin(uint8_t *mac, unsigned long timeout, unsigned long resp
 	if (W5100.init() == 0) return 0;
 	SPI.beginTransaction(SPI_ETHERNET_SETTINGS);
 	W5100.setMACAddress(mac);
-	W5100.setIPAddress(IPAddress(0,0,0,0).raw_address());
+	W5100.setIPAddress(IPAddress(192,168,200,1).raw_address());
 	SPI.endTransaction();
 
 	// Now try to get our config info from a DHCP server
